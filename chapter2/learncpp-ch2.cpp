@@ -1,14 +1,20 @@
 #include <iostream>
 
-void doPrint()
+void doPrintTwo()
 {
-	std::cout <<		"In doPrint() \n";
+	std::cout <<		"In doPrintTwo() ---------- function calling function \n";
+}
+
+void doPrintStart()
+{
+	std::cout <<		"In doPrintStart() \n";
+	doPrintTwo();
 }
 
 int main(){
 	std::cout <<		"In main() \n";
-	doPrint();		// call doPrint()
-	doPrint();		// call doPrint() should see text 2x
+	doPrintStart();		// call doPrintStart()
+	doPrintStart();		// call doPrintStart() should see text 2x
 	std::cout <<		"End main() \n";
 	return 0;
 }
@@ -17,3 +23,4 @@ int main(){
 // In doPrint()
 // In doPrint()
 // Ending main()
+// Nested Function are not supported
